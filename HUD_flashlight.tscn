@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Art/kenney_fontpackage/Fonts/Kenney Future.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Art/kenney_fontpackage/Fonts/Kenney High Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Art/v1.1 dungeon crawler 16X16 pixel pack/v1.1 dungeon crawler 16X16 pixel pack/props_itens/barrel.png" type="Texture" id=3]
+[ext_resource path="res://HUD_flashlight.gd" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.176471, 0.443137, 0.635294, 0.317647 )
+
+[sub_resource type="Theme" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 50
+font_data = ExtResource( 2 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 168.0
+margin_bottom = 80.0
+custom_styles/panel = SubResource( 5 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 64.0
+margin_bottom = 72.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="x" type="Label" parent="."]
+margin_left = 72.0
+margin_top = 32.0
+margin_right = 130.0
+margin_bottom = 55.0
+theme = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "x"
+
+[node name="Flashlight" type="Label" parent="."]
+margin_left = 104.0
+margin_top = 16.0
+margin_right = 192.0
+margin_bottom = 61.0
+custom_fonts/font = SubResource( 8 )
+text = "##"
